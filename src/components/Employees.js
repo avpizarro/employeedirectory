@@ -20,21 +20,23 @@ export default class Employees extends Component {
       <tbody>
         {this.state.persons.map((person) => (
           <tr key={person.id.value}>
-            <td><img src={person.picture.thumbnail} 
+            <td className="has-text-centered"><img src={person.picture.thumbnail} 
             alt="employee" style={{borderRadius: "50%"}}/></td>
-            <td>{person.name.first + " " + person.name.last}</td>
-            <td>{person.email}</td>
-            <td>{person.dob.date.slice(8, 10) + " "} {
+            <td className="has-text-centered">{person.name.first + " " + person.name.last}</td>
+            <td className="has-text-centered">{person.email}</td>
+            <td className="has-text-centered">{person.dob.date.slice(8, 10) + " "} {
               months.map(item => {
               if(parseInt(person.dob.date.slice(5,7)) === months.indexOf(item)+1) {
-                console.log(parseInt(person.dob.date.slice(5,7)));
-                console.log(months.indexOf(item)-1);
                 return item;
               }
           })}
        </td>
-            <td>{person.location.country}</td>
-            <td>{person.cell}</td>
+            <td className="has-text-centered">{person.location.street.number + " " + person.location.street.name}
+            <br/>
+            {person.location.city + " , " + person.location.postcode}
+            <br/>
+            {person.location.country}</td>
+            <td className="has-text-centered">{person.cell}</td>
           </tr>
         ))}
         ;

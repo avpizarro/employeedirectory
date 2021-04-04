@@ -8,12 +8,12 @@ function EmpTable() {
           <table className="table is-narrow" style={{margin: "auto"}}>
             <thead>
               <tr>
-                <th title="picture">Picture</th>
-                <th title="name">Name</th>
-                <th title="email">Email</th>
-                <th title="birthday">Birthday</th>
-                <th title="address">Address</th>
-                <th title="phone">Phone</th>
+                <th title="picture" className="has-text-centered">Picture</th>
+                <th title="name" className="has-text-centered">Name</th>
+                <th title="email" className="has-text-centered">Email</th>
+                <th title="birthday" className="has-text-centered">Birthday</th>
+                <th title="address" className="has-text-centered">Address</th>
+                <th title="phone" className="has-text-centered">Phone</th>
               </tr>
             </thead>
             <Employees />
