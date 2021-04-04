@@ -21,7 +21,7 @@ function EmpTable() {
         </div>
       </div> 
     </section>
-  );
+  )
 }
 
 export default EmpTable;

@@ -39,7 +39,6 @@ export default class Employees extends Component {
             <td className="has-text-centered">{person.cell}</td>
           </tr>
         ))}
-        ;
       </tbody>
     );
   }
