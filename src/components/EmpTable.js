@@ -1,3 +1,7 @@
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "font-awesome/css/font-awesome.min.css";
+
 function EmpTable() {
   return (
     <thead>
@@ -6,19 +10,19 @@ function EmpTable() {
           Picture
         </th>
         <th title="name" className="has-text-centered">
-          Name
+          Name  <FontAwesomeIcon icon="sort" />
         </th>
         <th title="email" className="has-text-centered">
-          Email
+          Email  <FontAwesomeIcon icon="sort" />
         </th>
         <th title="birthday" className="has-text-centered">
-          Birthday
+          Birthday  <FontAwesomeIcon icon="sort" />
         </th>
         <th title="address" className="has-text-centered">
-          Address
+          Address <FontAwesomeIcon icon="sort" />
         </th>
         <th title="phone" className="has-text-centered">
-          Phone
+          Phone  <FontAwesomeIcon icon="sort" />
         </th>
       </tr>
     </thead>
