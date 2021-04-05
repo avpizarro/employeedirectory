@@ -1,3 +1,7 @@
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "font-awesome/css/font-awesome.min.css";
+
 function Header() {
   return (
     <header className="hero has-text-centered">
@@ -7,32 +11,23 @@ function Header() {
           <img src="logo192.png" alt="Logo" style={{ height: "50px" }} />
         </p>
       </div>
-      {/* <div class="hero-foot">
-        <nav class="tabs is-boxed is-fullwidth">
-          <div class="container">
-            <ul>
-              <li class="is-active">
-                <a>Overview</a>
-              </li>
-              <li>
-                <a>Modifiers</a>
-              </li>
-              <li>
-                <a>Grid</a>
-              </li>
-              <li>
-                <a>Elements</a>
-              </li>
-              <li>
-                <a>Components</a>
-              </li>
-              <li>
-                <a>Layout</a>
-              </li>
-            </ul>
+
+      <div className="columns">
+        <div className="column"></div>
+        <div className="column">
+          <div className="field" style={{marginLeft: "20px", marginRight: "20px"}}>
+            <p className="control has-icons-left">
+              <input className="input" type="text" placeholder="Search"></input>
+              <span className="icon is-small is-left">
+                <i>
+                  <FontAwesomeIcon icon="search" />
+                </i>
+              </span>
+            </p>
           </div>
-        </nav>
-      </div> */}
+        </div>
+        <div className="column"></div>
+      </div>
     </header>
   );
 }

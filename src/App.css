@@ -7,6 +7,11 @@
   pointer-events: none;
 }
 
+.input:focus, .textarea:focus, .select select:focus, .is-focused.input, .is-focused.textarea, .select select.is-focused, .input:active, .textarea:active, .select select:active, .is-active.input, .is-active.textarea, .select select.is-active {
+  border-color: #363636 !important;
+  box-shadow: 0 0 0.125em 0.125em rgb(160, 159, 159) !important;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
