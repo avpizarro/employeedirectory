@@ -11,7 +11,7 @@ export default class Employees extends Component {
   };
 
   componentDidMount() {
-    axios.get("https://randomuser.me/api/?results=20").then((res) => {
+    axios.get("https://randomuser.me/api/?results=10").then((res) => {
       console.log(res.data.results);
       this.setState({ persons: res.data.results });
     });
@@ -31,17 +31,30 @@ export default class Employees extends Component {
         console.log(person);
         selectedPeeps.push(person);
         return person;
+      } else {
+        return null;
       }
     });
     console.log(selectedPeeps);
-    this.setState( {persons: selectedPeeps})
-    console.log(this.state.persons)
+    this.setState({ persons: selectedPeeps });
+    console.log(this.state.persons);
   };
 
   sortBy = (event) => {
-    const categoryToSort = event.target.value;
-    console.log(categoryToSort);
-  }
+    const category = event.target.value;
+    console.log(category);
+    const arrayToSort = this.state.persons;
+    if (category === "name") {
+      arrayToSort.sort((a, b) => (a.name.first > b.name.first ? 1 : -1));
+    } else if (category === "email") {
+      arrayToSort.sort((a, b) => (a.email > b.email ? 1 : -1));
+    } else if (category === "dob") {
+      arrayToSort.sort((a, b) => (a.dob.date.slice(5,7)+a.dob.date.slice(8,10) > b.dob.date.slice(5,7)+b.dob.date.slice(8,10) ? 1 : -1));
+    } else if (category === "country") {
+      arrayToSort.sort((a, b) => (a.location.country > b.location.country ? 1 : -1));
+    }
+    this.setState({ persons: arrayToSort });;
+  };
 
   render() {
     console.log(this.state.persons);
@@ -92,6 +105,8 @@ export default class Employees extends Component {
                           months.indexOf(item) + 1
                         ) {
                           return item;
+                        } else {
+                          return null;
                         }
                       })}
                     </td>
