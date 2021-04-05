@@ -38,6 +38,11 @@ export default class Employees extends Component {
     console.log(this.state.persons)
   };
 
+  sortBy = (event) => {
+    const categoryToSort = event.target.value;
+    console.log(categoryToSort);
+  }
+
   render() {
     console.log(this.state.persons);
     const months = [
@@ -54,25 +59,7 @@ export default class Employees extends Component {
       "Nov",
       "Dec",
     ];
-    // if (this.state.inputValue) {
-    //   return (
-    //     <section className="section">
-    //       <PersonSearch />
-    //       <div className="columns is-centered">
-    //         <div className="column is-narrow table-container">
-    //           <table className="table is-narrow" style={{ margin: "auto" }}>
-    //             <EmpTable />
-    //             <tbody>
-    //               <tr>
-    //                 <td>{this.state.inputValue}</td>
-    //               </tr>
-    //             </tbody>
-    //           </table>
-    //         </div>
-    //       </div>
-    //     </section>
-    //   );
-    // } else {
+
     return (
       <section className="section">
         <PersonSearch
@@ -82,7 +69,7 @@ export default class Employees extends Component {
         <div className="columns is-centered">
           <div className="column is-narrow table-container">
             <table className="table is-narrow" style={{ margin: "auto" }}>
-              <EmpTable />
+              <EmpTable sortBy={this.sortBy} />
               <tbody>
                 {this.state.persons.map((person) => (
                   <tr key={person.phone}>
