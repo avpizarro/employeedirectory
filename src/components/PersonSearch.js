@@ -16,7 +16,7 @@ function PersonSearch(props) {
               className="input"
               type="text"
               placeholder="Find a person"
-              onClick={props.personFilterOnChange}
+              onBlur={props.personFilterOnChange}
               value={props.inputValue}
             ></input>
             <span className="icon is-small is-left">

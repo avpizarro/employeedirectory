@@ -1,11 +1,12 @@
+import '../../src/App.css';
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "font-awesome/css/font-awesome.min.css";
 
 function EmpTable(props) {
   return (
-    <thead>
-      <tr>
+    <thead className="mb-5">
+      <tr >
         <th title="picture" className="has-text-centered">
           Picture
         </th>
