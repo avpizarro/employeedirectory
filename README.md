@@ -6,7 +6,7 @@
 
 An application that allows you to view your entire employee directory at once so that you have quick access to their information.
 
-Deployed app :link: 
+Deployed app :link: https://quiet-beyond-63990.herokuapp.com/
 
 Github repository :link: https://github.com/avpizarro/employeedirectory.git
 
@@ -21,11 +21,11 @@ Github repository :link: https://github.com/avpizarro/employeedirectory.git
 
 ## Installation
 
-Visit this link to start using the app :link:
+Visit this link to start using the app :link: https://quiet-beyond-63990.herokuapp.com/
 
 ## Usage
 
-On start the Random User API will be called and as an example the information of 20 employees will be displayed. Input any information (ex: name, country...) and press search to find an employee. You can also sort the directory by name, email, date of birth or address. 
+On start the Random User API will be called and, as an example, the information of 20 employees will be displayed. Input any information (ex: name, country...) and press search to find an employee. You can also sort the directory by name, email, date of birth or address. 
 
 ## License
 
