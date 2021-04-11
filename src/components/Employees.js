@@ -6,14 +6,16 @@ import EmpTable from "./EmpTable";
 export default class Employees extends Component {
   state = {
     persons: [],
+    initialState: [],
     inputValue: "",
-    sortValue: "",
+    sortValue: ""
   };
 
+  
   componentDidMount() {
     axios.get("https://randomuser.me/api/?results=10").then((res) => {
       console.log(res.data.results);
-      this.setState({ persons: res.data.results });
+      this.setState({ persons: res.data.results, initialState: res.data.results });
     });
   }
 
@@ -22,6 +24,11 @@ export default class Employees extends Component {
     console.log("New input Value", event.target.value);
     this.setState({ inputValue: event.target.value });
   };
+
+  handleReset = (event) => {
+    event.preventDefault();
+    this.setState({ persons: this.state.initialState });
+  }
 
   handleFormSubmit = (event) => {
     const selectedPeeps = [];
@@ -35,9 +42,7 @@ export default class Employees extends Component {
         return null;
       }
     });
-    console.log(selectedPeeps);
     this.setState({ persons: selectedPeeps });
-    console.log(this.state.persons);
   };
 
   sortBy = (event) => {
@@ -57,7 +62,6 @@ export default class Employees extends Component {
   };
 
   render() {
-    console.log(this.state.persons);
     const months = [
       "Jan",
       "Feb",
@@ -72,12 +76,12 @@ export default class Employees extends Component {
       "Nov",
       "Dec",
     ];
-
     return (
       <section className="section">
         <PersonSearch
           handleFormSubmit={this.handleFormSubmit}
           personFilterOnChange={this.personFilterOnChange}
+          handleReset={this.handleReset}
         />
         <div className="columns is-centered">
           <div className="column is-narrow table-container">
@@ -130,4 +134,3 @@ export default class Employees extends Component {
     );
   }
 }
-// }

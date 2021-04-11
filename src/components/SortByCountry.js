@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "font-awesome/css/font-awesome.min.css";
 
-function SortByCountry(props) {
+function SortByCountry() {
   return (
     <div className="columns">
       <div className="column"></div>
@@ -24,7 +24,6 @@ function SortByCountry(props) {
                 <FontAwesomeIcon icon="globe" />
               </i>
             </span>
-            {/* <input className="input" type="text" placeholder="Search" value={props.sortValue} onChange={props.personSortOnChange}></input> */}
           </p>
           <div className="control" >
             <button type="submit" className="button" style={{backgroundColor: "#eee"}}>
