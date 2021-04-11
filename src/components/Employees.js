@@ -13,7 +13,7 @@ export default class Employees extends Component {
 
   
   componentDidMount() {
-    axios.get("https://randomuser.me/api/?results=10").then((res) => {
+    axios.get("https://randomuser.me/api/?results=20").then((res) => {
       console.log(res.data.results);
       this.setState({ persons: res.data.results, initialState: res.data.results });
     });
